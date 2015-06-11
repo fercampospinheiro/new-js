@@ -1,210 +1,226 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/xsd/thymeleaf-extras-dialect-2.1.xsd">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{font-awesome-4.3.0/css/font-awesome.min.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script src="js/bootstrap.min.js"></script>
-<title>Js Serviços Terceirizados</title>
-<script type="text/javascript">
-  google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+    <script th:src="@{~/js/bootstrap.min.js}"></script>
+    <title>Js Serviços Terceirizados</title>
+    <script type="text/javascript">
+        google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
 
-var url="http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed"
-var numeroFeeds = 5;
+        var url = "http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
+        var numeroFeeds = 5;
 
 
-function configuracaoFeeds(){
-  var feed = new google.feeds.Feed(url) //Google Feed API method
-  feed.setNumEntries(numeroFeeds) //Google Feed API method
-  feed.load(exibeFeed) //Google Feed API method
-}
+        function configuracaoFeeds() {
+            var feed = new google.feeds.Feed(url) //Google Feed API method
+            feed.setNumEntries(numeroFeeds) //Google Feed API method
+            feed.load(exibeFeed) //Google Feed API method
+        }
 
-function exibeFeed(resultado){
-  if (!resultado.error){
-    var feeds = resultado.feed.entries;
-    var ul= $("<ul>").addClass("list-group")
+        function exibeFeed(resultado) {
+            if (!resultado.error) {
+                var feeds = resultado.feed.entries;
+                var ul = $("<ul/>").addClass("list-group")
 
-    
-      $.each(feeds,function(i,value){
-  
-            var li = $("<li>").addClass("list-group-item")
-            link = "noticia" + (i+1) + ".html";
-            var a = $("<a>").attr("href",link);
 
-            a.text(value.title)
-            li.append(a)
-            ul.append(li)
-            
-      })
-      $("#feeddiv").append(ul);
+                $.each(feeds, function (i, value) {
 
-  }
-  else
-    alert("Noticias não carregadas!")
-}
+                    var li = $("<li/>").addClass("list-group-item")
+                    link = "noticia" + (i + 1) + ".html";
+                    var a = $("<a/>").attr("href", link);
 
-google.setOnLoadCallback(configuracaoFeeds);
+                    a.text(value.title)
+                    li.append(a);
+                    ul.append(li);
 
-</script>
+                });
+                $("#feeddiv").append(ul);
+
+            }
+            else
+                alert("Noticias não carregadas!")
+        }
+
+        google.setOnLoadCallback(configuracaoFeeds);
+
+    </script>
 </head>
 <body>
 <div class="container">
 
-  <!-- CABECALHO -->
-  <div class="cabecalho">
-    <div class="area-logo row">
-      <div class="logo">
-      <image class="imagem-logo" src="imagens/logo-js-sem-letra.jpeg"></image>
-      <image src="imagens/letra-js.jpeg"></image>
-      </div>
-    </div>
-    <div class="area-menu row">
-      <div class="menu" >
-        <ul class="nav nav-tabs">
-          <li role="presentation" class="active">
-            <a href="index.html">
-              <span class="glyphicon glyphicon-home"></span>
-                Home
-            </a>
-          </li>
-          <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">
-              Nossos Serviços
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Portaria</a></li>
-              <li><a href="#">Zeladoria</a></li>
-              <li><a href="#">Limpeza em Geral</a></li>
-              <li><a href="#">Recepção</a></li>
-              <li><a href="#">Jardinagem</a></li>
-              <li><a href="#">Matuntenção de Piscinas</a></li>
-              <li><a href="#">Monitoramento e  Segurança</a></li>
-            </ul>
-          </li>
-          <li class="no-active" role="presentation"><a href="tire-suas-duvidas.html">Tire suas Duvidas</a></li>
-          <li class="no-active" role="presentation"><a href="contato.html">Entre em contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!--CONTEUDO-->
-  <div class="area-conteudo">
-
-    <div class="servicos-destaque row   ">
-      <div class="servico col-md-3">
-          <h4>
-            <i class="fa fa-shield"></i>
-            Recepção
-          </h4>
-        <div class="thumbnail">
-		         <img src="imagens/ID-100195547.jpg"/>
-        </div>
-      </div>
-      <div class="servico col-md-3">
-            <h4>
-              <i class="fa fa-shield"></i>
-              Segurança
-            </h4>
-          <div class="thumbnail">
-               <img src="imagens/ID-100104916.jpg"/>
-          </div>
-      </div>
-      <div class="servico col-md-3">
-            <h4>
-              <i class="fa fa-shield"></i>
-              Portaria
-            </h4>
-          <div class="thumbnail">
-               <img src="imagens/ID-100195547.jpg"/>
-          </div>
-    </div>
-    <div class="servico col-md-3">
-          <h4>
-            <i class="fa fa-shield"></i>
-            Limpeza
-          </h4>
-        <div class="thumbnail">
-             <img src="imagens/limpesa.jpeg"/>
-        </div>
-  </div>
-
-  </div>
-  <div class="resumo row">
-      <div class="empresa jumbotron">
-        <div class="container">
-            <div class="col-md-12">
-              <p>  A <strong>JS TERCEIRIZAÇÕES</strong> é uma empresa nova no mercado. Nosso foco é trazer serviços diferenciados em um mercado competitivo.</p>
-              <p>Desde o processo de seleção dos profissionais, treinamento e monitoração , queremos oferecer ao nosso cliente, serviços de qualidade que atenda suas expectativas e propostas que se encaixem dentro de suas necessidades.</p>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="outros-conteudo row">
-
-      <div class="testemunho col-md-4">
-          <div class="row">
-            <div class="titulo text-center">
-              <h4>
-                <i class="fa fa-shield"></i>
-                Testemunhos
-              </h4>
+    <!-- CABECALHO -->
+    <div class="cabecalho">
+        <div class="area-logo row">
+            <div class="logo">
+                <image class="imagem-logo" th:src="@{imagens/logo-js-sem-letra.jpeg}"></image>
+                <image src="imagens/letra-js.jpeg"></image>
             </div>
-          </div>
-          <div class="row">
-            <div id="myCarousel" class="carousel slides" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-
-                <div class="item active text-center">
-                    <p>Empresa séria, estão de parabéns. Continuem assim! </p>
-                    <p><strong>Marco Buarque</strong></p>
-                </div>
-
-                <div class="item text-center">
-                    <p>"Portaria nota 10!!!!!!!"</p>
-                    <p><strong>Jéssica Catarina</strong></p>
-                </div>
-
-                <div class="item text-center">
-                    <p>"Meu jardim ficou lindo no Reveillon - salvaram minha vida!"</p>
-                    <p><strong> Iris Eleuza</strong></p>
-                </div>
-
-              </div>
+        </div>
+        <div class="area-menu row">
+            <div class="menu">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active">
+                        <a href="index.html">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">
+                            Nossos Serviços
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Portaria</a></li>
+                            <li><a href="#">Zeladoria</a></li>
+                            <li><a href="#">Limpeza em Geral</a></li>
+                            <li><a href="#">Recepção</a></li>
+                            <li><a href="#">Jardinagem</a></li>
+                            <li><a href="#">Matuntenção de Piscinas</a></li>
+                            <li><a href="#">Monitoramento e Segurança</a></li>
+                        </ul>
+                    </li>
+                    <li class="no-active" role="presentation"><a href="tire-suas-duvidas.html">Tire suas Duvidas</a>
+                    </li>
+                    <li class="no-active" role="presentation"><a href="contato.html">Entre em contato</a></li>
+                </ul>
             </div>
-          </div>
-      </div>
-      <div class="noticias col-md-4">
-        <div class="row">
-          <div class="titulo text-center">
-            <h4>
-              <i class="fa fa-shield"></i>
-              Notícias
-            </h4>
-          </div>
         </div>
-        <div id = "feeddiv" class="row">
+    </div>
+    <!--CONTEUDO-->
+    <div class="area-conteudo">
+
+        <div class="servicos-destaque row   ">
+            <div class="servico col-md-3">
+                <h4>
+                    <i class="fa fa-shield"></i>
+                    Recepção
+                </h4>
+
+                <div class="thumbnail">
+                    <img th:src="@{imagens/ID-100195547.jpg}"/>
+                </div>
+            </div>
+            <div class="servico col-md-3">
+                <h4>
+                    <i class="fa fa-shield"></i>
+                    Segurança
+                </h4>
+
+                <div class="thumbnail">
+                    <img th:src="@{imagens/ID-100104916.jpg}"/>
+                </div>
+            </div>
+            <div class="servico col-md-3">
+                <h4>
+                    <i class="fa fa-shield"></i>
+                    Portaria
+                </h4>
+
+                <div class="thumbnail">
+                    <img th:src="@{imagens/ID-100195547.jpg}"/>
+                </div>
+            </div>
+            <div class="servico col-md-3">
+                <h4>
+                    <i class="fa fa-shield"></i>
+                    Limpeza
+                </h4>
+
+                <div class="thumbnail">
+                    <img th:src="@{imagens/limpesa.jpeg}"/>
+                </div>
+            </div>
 
         </div>
+        <div class="resumo row">
+            <div class="empresa jumbotron">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p> A <strong>JS TERCEIRIZAÇÕES</strong> é uma empresa nova no mercado. Nosso foco é trazer
+                            serviços diferenciados em um mercado competitivo.</p>
 
-      </div>
-      <div class="orcamento col-md-4 text-center">
-          <h2>LIGUE AGORA</h2>
-          <h2>(11) 2700-0000</h2>
-          <h2>PEÇA</h2>
-          <h2>UM ORÇAMENTO</h2>
-      </div>
-  </div>
+                        <p>Desde o processo de seleção dos profissionais, treinamento e monitoração , queremos oferecer
+                            ao nosso cliente, serviços de qualidade que atenda suas expectativas e propostas que se
+                            encaixem dentro de suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outros-conteudo row">
 
-  </div>
+            <div class="testemunho col-md-4">
+                <div class="row">
+                    <div class="titulo text-center">
+                        <h4>
+                            <i class="fa fa-shield"></i>
+                            Testemunhos
+                        </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="myCarousel" class="carousel slides" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
 
-  <!--RODAPE-->
-  <div class="rodape">
+                            <div class="item active text-center">
+                                <p>Empresa séria, estão de parabéns. Continuem assim! </p>
 
-    texto
-  </div>
+                                <p><strong>Marco Buarque</strong></p>
+                            </div>
+
+                            <div class="item text-center">
+                                <p>"Portaria nota 10!!!!!!!"</p>
+
+                                <p><strong>Jéssica Catarina</strong></p>
+                            </div>
+
+                            <div class="item text-center">
+                                <p>"Meu jardim ficou lindo no Reveillon - salvaram minha vida!"</p>
+
+                                <p><strong> Iris Eleuza</strong></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="noticias col-md-4">
+                <div class="row">
+                    <div class="titulo text-center">
+                        <h4>
+                            <i class="fa fa-shield"></i>
+                            Notícias
+                        </h4>
+                    </div>
+                </div>
+                <div id="feeddiv" class="row">
+
+                </div>
+
+            </div>
+            <div class="orcamento col-md-4 text-center">
+                <h2>LIGUE AGORA</h2>
+
+                <h2>(11) 2700-0000</h2>
+
+                <h2>PEÇA</h2>
+
+                <h2>UM ORÇAMENTO</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!--RODAPE-->
+    <div class="rodape">
+
+        texto
+    </div>
 </div>
 </body>
 </html>
