@@ -1,0 +1,55 @@
+
+.imagem-logo{
+  width: 6%;
+  height: 6%;
+  }
+.servicos-destaque{
+  background: grey;
+}
+
+.servico-texto{
+  margin: 1% 1%;
+}
+.bloco{
+  padding: 2% 2%;
+}
+
+.area-logo{
+  margin-top : 1%;
+  margin-bottom: 1%;
+}
+.orcamento{
+  padding: 2% 2%;
+  background: grey;
+  border-right : 1px solid grey;
+}
+.no-active{
+  .background:#6495ED;
+}
+.empresa{
+  border: 1px solid grey;
+}
+
+.noticias .row >first{
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  background: grey;
+}
+.titulo h4{
+  color: black;
+  font-famisly: inherit;
+}
+.outros-conteudo{
+  border: 1px solid grey;
+}
+
+#myCarousel{
+    padding: 4% 4%;
+}
+
+.carousel p{
+    font-size: 25px;
+}
+
+
+

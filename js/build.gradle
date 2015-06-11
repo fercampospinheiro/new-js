@@ -1,0 +1,53 @@
+task stage(dependsOn: ['build'])
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE'
+        classpath 'org.springframework:springloaded:1.2.3.RELEASE'
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+//compileJava.dependsOn(processResources)
+
+
+jar {
+    baseName = 's3-spring-heroku'
+    version =  '1.0.0'
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+
+dependencies {
+
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
+    compile 'com.google.guava:guava:18.0'
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+
+    optional "org.springframework.boot:spring-boot-configuration-processor"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
