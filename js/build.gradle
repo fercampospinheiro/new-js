@@ -16,6 +16,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'propdeps-idea'
 
 //compileJava.dependsOn(processResources)
 
@@ -44,6 +45,7 @@ dependencies {
     compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
     compile 'com.google.guava:guava:18.0'
     compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'com.amazonaws:aws-java-sdk-s3:1.9.35'
 
     optional "org.springframework.boot:spring-boot-configuration-processor"
 }
