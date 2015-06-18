@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layoutDecorator/mainDecorator">
+<html xmlns:th="http://www.thymeleaf.org/xsd/thymeleaf-extras-dialect-2.1.xsd">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script src="js/bootstrap.min.js"></script>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href="@{/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/lib/font-awesome-4.3.0/css/font-awesome.min.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
 <title>Js Serviços Terceirizados</title>
 <script th:inline="javascript">
 	/*<![CDATA[*/
