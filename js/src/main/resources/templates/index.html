@@ -2,52 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org/xsd/thymeleaf-extras-dialect-2.1.xsd">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
-    <link th:href="@{css/style.css}" rel="stylesheet"/>
-    <link rel="stylesheet" th:href="@{font-awesome-4.3.0/css/font-awesome.min.css}"/>
+    <link th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script th:src="@{~/js/bootstrap.min.js}"></script>
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
     <title>Js Serviços Terceirizados</title>
-    <script type="text/javascript">
-        google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+	      google.load("feeds", "1"); //Load Google Ajax Feed API (version 1)
 
-        var url = "http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
-        var numeroFeeds = 5;
-
-
-        function configuracaoFeeds() {
-            var feed = new google.feeds.Feed(url) //Google Feed API method
-            feed.setNumEntries(numeroFeeds) //Google Feed API method
-            feed.load(exibeFeed) //Google Feed API method
-        }
-
-        function exibeFeed(resultado) {
-            if (!resultado.error) {
-                var feeds = resultado.feed.entries;
-                var ul = $("<ul/>").addClass("list-group")
+	        var url = "http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
+	        var numeroFeeds = 5;
 
 
-                $.each(feeds, function (i, value) {
+	        function configuracaoFeeds() {
+	            var feed = new google.feeds.Feed(url) //Google Feed API method
+	            feed.setNumEntries(numeroFeeds) //Google Feed API method
+	            feed.load(exibeFeed) //Google Feed API method
+	        }
 
-                    var li = $("<li/>").addClass("list-group-item")
-                    link = "noticia" + (i + 1) + ".html";
-                    var a = $("<a/>").attr("href", link);
+	        function exibeFeed(resultado) {
+	            if (!resultado.error) {
+	                var feeds = resultado.feed.entries;
+	                var ul = $("<ul/>").addClass("list-group")
 
-                    a.text(value.title)
-                    li.append(a);
-                    ul.append(li);
 
-                });
-                $("#feeddiv").append(ul);
+	                $.each(feeds, function (i, value) {
 
-            }
-            else
-                alert("Noticias não carregadas!")
-        }
+	                    var li = $("<li/>").addClass("list-group-item")
+	                    link = "noticia" + (i + 1) + ".html";
+	                    var a = $("<a/>").attr("href", link);
 
-        google.setOnLoadCallback(configuracaoFeeds);
+	                    a.text(value.title)
+	                    li.append(a);
+	                    ul.append(li);
 
+	                });
+	                $("#feeddiv").append(ul);
+
+	            }
+	            else
+	                alert("Noticias não carregadas!")
+	        }
+
+	        google.setOnLoadCallback(configuracaoFeeds);
+	/*]]>*/
     </script>
 </head>
 <body>
@@ -57,8 +58,8 @@
     <div class="cabecalho">
         <div class="area-logo row">
             <div class="logo">
-                <image class="imagem-logo" th:src="@{imagens/logo-js-sem-letra.jpeg}"></image>
-                <image src="imagens/letra-js.jpeg"></image>
+                <image class="imagem-logo" th:src="@{image/logo-js-sem-letra.jpeg}"></image>
+                <image src="image/letra-js.jpeg"></image>
             </div>
         </div>
         <div class="area-menu row">
@@ -103,7 +104,7 @@
                 </h4>
 
                 <div class="thumbnail">
-                    <img th:src="@{imagens/ID-100195547.jpg}"/>
+                    <img th:src="@{image/ID-100195547.jpg}"/>
                 </div>
             </div>
             <div class="servico col-md-3">
@@ -113,7 +114,7 @@
                 </h4>
 
                 <div class="thumbnail">
-                    <img th:src="@{imagens/ID-100104916.jpg}"/>
+                    <img th:src="@{image/ID-100104916.jpg}"/>
                 </div>
             </div>
             <div class="servico col-md-3">
@@ -123,7 +124,7 @@
                 </h4>
 
                 <div class="thumbnail">
-                    <img th:src="@{imagens/ID-100195547.jpg}"/>
+                    <img th:src="@{image/ID-100195547.jpg}"/>
                 </div>
             </div>
             <div class="servico col-md-3">
@@ -133,7 +134,7 @@
                 </h4>
 
                 <div class="thumbnail">
-                    <img th:src="@{imagens/limpesa.jpeg}"/>
+                    <img th:src="@{image/limpesa.jpeg}"/>
                 </div>
             </div>
 
