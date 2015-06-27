@@ -43,6 +43,7 @@ dependencies {
 
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
+    compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.7'
     compile 'com.google.guava:guava:18.0'
     compile 'com.google.code.findbugs:jsr305:3.0.0'
     compile 'com.amazonaws:aws-java-sdk-s3:1.9.35'

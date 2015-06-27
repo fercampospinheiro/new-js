@@ -1,0 +1,63 @@
+	<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layoutDecorator/layout-principal">
+<head>
+<title>Js Serviços Terceirizados - Notícias</title>
+<script>
+/*<![CDATA[*/
+	google.load("feeds", "1"); //Load Google Ajax Feed API (version 1)
+	
+	var url="http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
+	var numeroFeeds = 2;
+	
+	
+	function configuracaoFeeds(){
+	  var feed = new google.feeds.Feed(url) ;//Google Feed API method
+	  feed.setNumEntries(numeroFeeds); //Google Feed API method
+	  feed.load(exibeFeed); //Google Feed API method
+	}
+	
+	function exibeFeed(resultado){
+	  if (!resultado.error){
+	    var feeds = resultado.feed.entries;
+	    var conteudo = "";
+	    var primeiraNoticia = 0
+	      
+	    $.each(feeds,function(i,value){
+	  
+	        if(i == primeiraNoticia ){    
+	            var paragrafo = "";
+	            conteudo = paragrafo.concat(
+	                "<h3><strong>"+value.title+"</strong></h3>",
+	                value.content,
+	                value.author,
+	                "</br><Strong>Fonte www.ebc.com.br</strong>"
+	            )
+	            
+	             $("#noticia").append(conteudo);
+	        }
+	
+	      
+	    })
+	
+	  }
+	  else
+	    alert("Noticias não carregadas!")
+	}
+	
+	google.setOnLoadCallback(configuracaoFeeds);
+	/*]]>*/
+</script>
+</head>
+<body>
+	<section id="content"  layout:fragment="content">
+	  <div class="area-conteudo">
+	  <div class="resumo row">
+	      <div id = "noticia" class="noticia well">
+	        
+	      </div>
+	  </div>
+	
+	  </div>
+	</section>
+</body>
+</html>

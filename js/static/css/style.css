@@ -1,14 +1,19 @@
 
 .imagem-logo{
   width: 6%;
-  height: 6%;
+  height: 6	%;
   }
+  
+ .letra-logo{
+ 	width: 35%;
+  	height: 5%;
+ } 
 .servicos-destaque{
   background: grey;
 }
 
 .servico-texto{
-  margin: 1% 1%;
+  margin: 1% 1%;	
 }
 .bloco{
   padding: 2% 2%;
@@ -18,29 +23,30 @@
   margin-top : 1%;
   margin-bottom: 1%;
 }
-.orcamento{
-  padding: 2% 2%;
-  background: grey;
-  border-right : 1px solid grey;
-}
-.no-active{
-  .background:#6495ED;
-}
-.empresa{
-  border: 1px solid grey;
+.orcamento{	
+  padding:2%; 
+  background: #D6C3A2	;
+  color : white;
 }
 
-.noticias .row >first{
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
-  background: grey;
+.resumo{
+  border-left: 1px solid #E7E7E7;
+  border-right:1px solid #E7E7E7;	
+  background:#FAFAFA;
+}
+.noticias{
+  border-right: 1px solid #E7E7E7;
+  border-left: 1px solid #E7E7E7;
+}
+.noticias ul li{
+	border: none; 
 }
 .titulo h4{
   color: black;
   font-famisly: inherit;
 }
 .outros-conteudo{
-  border: 1px solid grey;
+  border: 1px solid #E7E7E7;
 }
 
 #myCarousel{
@@ -49,6 +55,34 @@
 
 .carousel p{
     font-size: 25px;
+}
+.cabecalho-contato{
+	border:1px solid #E7E7E7;
+}
+.conteudo-contato{
+	border:1px solid #E7E7E7;
+	background: #E7E7E7;
+}
+.form-horizontal{
+	padding: 4% 4% 0% 4%;
+	background: #A9A9A9;
+	border-left: 1px solid white;
+	border-right: 1px solid white;	
+}
+.rodape{
+	background: #027CAE	;
+}
+ul.links-rodape.list-group {
+	padding: 2%;
+}
+ul.links-rodape.list-group li {
+	border:none;
+	color:white;
+	background: transparent;
+}
+ul.links-rodape.list-group a{
+	color: white;
+	background: none;
 }
 
 

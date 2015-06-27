@@ -9,6 +9,6 @@ public class NoticiasController {
     @RequestMapping("noticias")
     public String carregaNoticias(){
 
-        return "noticias";
+        return "noticias/noticias";
     }
 }
