@@ -8,8 +8,7 @@ public class IndexController {
 
 
     @RequestMapping("/")
-    public String index() {
-   
+    public String carregaTemplateIndex() {
         return "home/index";
     }
 }

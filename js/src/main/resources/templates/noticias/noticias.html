@@ -7,9 +7,8 @@
 	google.load("feeds", "1"); //Load Google Ajax Feed API (version 1)
 	
 	var url="http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
-	var numeroFeeds = 2;
-	
-	
+	var numeroFeeds = 5;
+
 	function configuracaoFeeds(){
 	  var feed = new google.feeds.Feed(url) ;//Google Feed API method
 	  feed.setNumEntries(numeroFeeds); //Google Feed API method
@@ -20,7 +19,7 @@
 	  if (!resultado.error){
 	    var feeds = resultado.feed.entries;
 	    var conteudo = "";
-	    var primeiraNoticia = 0
+	    var primeiraNoticia = $(".indiceNoticia").val() -1;
 	      
 	    $.each(feeds,function(i,value){
 	  
@@ -45,6 +44,7 @@
 	}
 	
 	google.setOnLoadCallback(configuracaoFeeds);
+	
 	/*]]>*/
 </script>
 </head>
@@ -52,6 +52,7 @@
 	<section id="content"  layout:fragment="content">
 	  <div class="area-conteudo">
 	  <div class="resumo row">
+	      <input type="hidden" class="indiceNoticia"  th:value ="${indiceNoticia}"/>
 	      <div id = "noticia" class="noticia well">
 	        
 	      </div>

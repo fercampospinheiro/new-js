@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DuvidasController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String carregaViewDuvidas() {
+	public String carregaTemplateDuvidas() {
 		return "duvidas/duvidas";
 	}
 	

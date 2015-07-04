@@ -9,6 +9,11 @@
 	        var url = "http://agenciabrasil.ebc.com.br/taxonomy/term/5/all/feed";
 	        var numeroFeeds = 5;
 
+	    	
+	    	function obtemURLNoticia(link)	{
+	    		return link.replace( /\s/g, '-' );
+	    		}
+
 
 	        function configuracaoFeeds() {
 	            var feed = new google.feeds.Feed(url) //Google Feed API method
@@ -25,10 +30,13 @@
 	                $.each(feeds, function (i, value) {
 
 	                    var li = $("<li/>").addClass("list-group-item")
-	                    link = "noticia" + (i + 1) + ".html";
-	                    var a = $("<a/>").attr("href", link);
+	                    var a = $("<a/>");
 
+	                    link = "/noticias/"+ (i+1) +"/"+ obtemURLNoticia(value.title);
+
+	                    a.prop("href",link);
 	                    a.text(value.title)
+	                    
 	                    li.append(a);
 	                    ul.append(li);
 

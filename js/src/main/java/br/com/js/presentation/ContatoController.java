@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ContatoController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String carregaViewContato() {
-		
+	public String carregaTemplateContato() {
 		return "contato/contato";
 	}
 }
