@@ -84,7 +84,14 @@ ul.links-rodape.list-group a{
 	color: white;
 	background: none;
 }
-/* */
+.imagen-seguranca{
+	border:1px solid #E7E7E7;
+	background: #E7E7E7;
+}
+.servico-seguranca{
+	border:1px solid #E7E7E7;
+	background: #E7E7E7;
+}
 
 
 
