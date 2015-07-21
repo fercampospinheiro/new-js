@@ -6,7 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.js.domain.Contato;
+import br.com.js.domain.contato.Contato;
 
 @Controller
 @RequestMapping("/contato")
@@ -21,6 +21,9 @@ public class ContatoController {
 	
 	@RequestMapping(value="/salvar",method=RequestMethod.POST)
 	private String salvar(Contato contato){
+		EmailService emailService = new EmailService();
+		emailService.enviaEmail("fercampospinheiro@gmail.com", "fercampospinheiro@gmail.com", "Teste da js", contato.getMensagem());
+		
 		return "contato/contato";
 	}
 }

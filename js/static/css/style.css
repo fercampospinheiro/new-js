@@ -9,7 +9,7 @@
   	height: 5%;
  } 
 .servicos-destaque{
-  background: grey;
+  background: #027CAE;
 }
 
 .servico-texto{
@@ -93,5 +93,37 @@ ul.links-rodape.list-group a{
 	background: #E7E7E7;
 }
 
-
+.sobre-nos p{
+	font-size : 17px;
+	text-align: justify;
+	font-family: arial;
+	color: black;
+}
+.sobre-nos ul{
+	font-size : 17px;
+	text-align: justify;
+	font-family: arial;
+}
+.sobre-nos h3{
+	font-size : 23px;
+	text-align: justify;
+	font-family: arial;
+}
+.sobre-nos-texto{
+	border-left: 1px solid #E7E7E7;
+  	border-right:1px solid #E7E7E7;	
+  	background:#FAFAFA;
+  	padding: 2% 2%;
+ } 
+ #imagem-sobre-nos{
+ 	width: 100%;
+ }
+ .imagem-servicos{
+ 	  width: 100%;
+  		height: 19em;
+ }
+ .servico{
+    max-height:400px;
+     position:relative;
+ }
 
