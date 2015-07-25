@@ -27,8 +27,9 @@
   margin-bottom: 1%;
 }
 .orcamento{	
-  padding:2%; 
-  background: #D6C3A2	;
+  margin-top: 10px; 
+  padding-bottom: 36px;
+  background: #027CAE;
   color : white;
 }
 
@@ -37,14 +38,25 @@
 	
 }
 .resumo-empresa .empresa{
-	padding:2%;
+	padding: 5%;
 	 border-right: 1px solid rgb(93, 182, 211);
   border-bottom: 1px solid rgb(93, 182, 211);
   border-left: 1px solid #5DB6D3;
+	font-size: 20px;
+	background: rgb(96, 182, 207);
 }
 .noticias{
   border-right: 1px solid #E7E7E7;
   border-left: 1px solid #E7E7E7;
+}
+
+.noticias .titulo {
+    background: yellowgreen;
+    margin-left: 1.8px;
+    margin-top: 1px;
+    margin-right: 1px;
+    border-top: 1px solid white;
+    /* border-right: 1px solid white; */
 }
 .noticias ul li{
 	border: none; 
@@ -57,7 +69,7 @@
   border-right: 1px solid rgb(93, 182, 211);
   border-bottom: 1px solid rgb(93, 182, 211);
   border-left: 1px solid #5DB6D3;
-  background: aliceblue;
+  background: white;
 }
 
 #myCarousel{
@@ -196,14 +208,14 @@ ul.links-rodape.list-group a{
  }
  
  .row .testemunho{
- 	  background: aliceblue;
+ 	  background: rgb(255, 255, 255);
  }
  .testemunho .titulo{
- 	  border-radius: 0.3em;
-  background: rgb(96, 176, 203);
+  
+ 	  background: rgb(177, 217, 229);
   margin-top: 2px;
-  margin-left: 20px;
-  margin-right: 20px;
+  
+  
  }
  
  
