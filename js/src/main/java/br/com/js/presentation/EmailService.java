@@ -1,15 +1,22 @@
 package br.com.js.presentation;
 import java.util.Properties;  
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.Message;  
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.Session;  
 import javax.mail.Transport;  
 import javax.mail.internet.InternetAddress;  
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;   
 import javax.mail.Authenticator;  
 import javax.mail.PasswordAuthentication;   
 
 import org.springframework.stereotype.Service;
+
  @Service 
 public class EmailService {  
       
@@ -54,11 +61,46 @@ public class EmailService {
         Session sessao = Session.getDefaultInstance(configuracoes, autentica);  
         sessao.setDebug(true);  
   
+        MimeBodyPart bodyPart = new MimeBodyPart();
+        try {
+			bodyPart.setText("anexo");
+		} catch (MessagingException e1) {
+			e1.printStackTrace();
+		}
+        
         Message mensagem = new MimeMessage(sessao);  
   
+        
+        Multipart mp = new javax.mail.internet.MimeMultipart();
+        DataSource source = new FileDataSource("../js.iml");
+        
+        try {
+			bodyPart.setDataHandler(new DataHandler(source));
+		} catch (MessagingException e1) {
+			e1.printStackTrace();
+		}
+        
+        try {
+			bodyPart.setFileName("../js.iml");
+		} catch (MessagingException e1) {
+			e1.printStackTrace();
+		}
+        
+        try {
+			mp.addBodyPart(bodyPart);
+		} catch (MessagingException e1) {
+			e1.printStackTrace();
+		}
+        
+        try {
+			mensagem.setContent(mp);
+		} catch (MessagingException e1) {
+			e1.printStackTrace();
+		}
+        
         try {  
             mensagem.setRecipient(Message.RecipientType.TO, new InternetAddress(emailDestino));  
-            mensagem.setFrom(new InternetAddress(emailOrigem));  
+            mensagem.setFrom(new InternetAddress(emailOrigem)); 
             mensagem.setSubject(assunto);   
             mensagem.setContent(conteudoEmail,"text/plain");  
   

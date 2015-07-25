@@ -9,7 +9,10 @@
   	height: 5%;
  } 
 .servicos-destaque{
-  background: #027CAE;
+  border-bottom: 1px solid rgb(89, 180, 211);
+  border-right: 1px solid rgb(96, 182, 210);
+  border-left: 1px solid rgb(93, 182, 211);
+  background: #FFFFFF;
 }
 
 .servico-texto{
@@ -30,17 +33,17 @@
 }
 
 .resumo{
-  border-left: 1px solid #E7E7E7;
-  border-right:1px solid #E7E7E7;	
+  border-bottom: 1px solid #5db6d3;
+  border-left: 1px solid #5DB6D3;
+  border-right: 1px solid #60B6D2;	
   background:#B6DCE5;
 }
 .resumo .empresa{
 	padding:2%;
 }
 .resumo p{
-	font-size : 17px;
-	font-family: arial;
-	color: black;	
+	font-size: 20px;
+	color: rgb(0, 61, 94);	
 	text-align: justify;
 }
 .noticias{
@@ -51,14 +54,19 @@
 	border: none; 
 }
 .titulo h4{
-  color: black;
-  font-famisly: inherit;
+  color: rgb(0, 75, 113);
+  font-size: 20px;
 }
 .outros-conteudo{
-  border: 1px solid #E7E7E7;
+  border-right: 1px solid rgb(93, 182, 211);
+  border-bottom: 1px solid rgb(93, 182, 211);
+  border-left: 1px solid #5DB6D3;
+  background: aliceblue;
 }
 
 #myCarousel{
+    margin-left: 28px;
+    margin-right: 28px;
     padding: 4% 4%;
 }
 
@@ -128,22 +136,69 @@ ul.links-rodape.list-group a{
  	width: 100%;
  }
  .imagem-servicos{
+ 	  border-bottom: 1px solid rgb(93, 182, 211);
  	  width: 100%;
  }
  .servico{
     max-height:400px;
      position:relative;
  }
- .destaque{
- 	height:250px;
- 	margin-top:1%;
- 	margin-bottom:1%;
- }
  .item{
- 	height:100%;
- 	border: 1px solid #E7E7E7;
- 	margin: 1%;	
- 	background: #D3E8EC;
- 	border-radius:0.5em;
+  background: white;
+  margin: 2%;
  }
+ .item .texto{
+ 	height:80%;
+ 	border: 1px solid grey;
+ 	backgroung:white;
+ }
+ .item img{
+	  margin-top: 2%;
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 40%;
+	  height: 40%;
+ }
+ .item h3{
+ 	margin-top: auto;
+ 	color:white;	
+ 	border-radius: 0.2em;
+  	
+ 	margin-left: 50px;
+  	
+ 	margin-right: 50px;
+  	
+ 	padding-bottom:3px;
+ }
+ 
+ .jardinagem{
+ 	/* border:1px solid  rgb(76, 175, 80); */ 
+ }
+ .jardinagem h3{	
+  	background:rgb(76, 175, 80); 
+  	color: rgb(240, 240, 247);
+}
+ .seguranca h3{	
+  	background:rgb(255, 87, 34);
+ }
+ .portaria h3{
+  	background: rgb(121, 85, 72);
+ }
+ .zeladoria h3{
+  	background: rgb(156, 39, 176);
+ }
+ 
+ .row .testemunho{
+ 	  background: aliceblue;
+ }
+ .testemunho .titulo{
+ 	  border-radius: 0.3em;
+  background: rgb(96, 176, 203);
+  margin-top: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+ }
+ 
+ 
 

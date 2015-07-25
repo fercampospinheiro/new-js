@@ -3,8 +3,9 @@
   width: 6%;
   height: 6%;
   }
-.servicos-destaque{
-  background: grey;
+
+.item .row{
+	background : #FFFFFF;
 }
 
 .servico-texto{
@@ -24,7 +25,7 @@
   border-right : 1px solid grey;
 }
 .no-active{
-  .background:#6495ED;
+  background:#6495ED;
 }
 .empresa{
   border: 1px solid grey;
