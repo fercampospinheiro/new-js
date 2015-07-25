@@ -33,18 +33,14 @@
 }
 
 .resumo{
-  border-bottom: 1px solid #5db6d3;
-  border-left: 1px solid #5DB6D3;
-  border-right: 1px solid #60B6D2;	
-  background:#B6DCE5;
+    color: rgb(0, 68, 102);
+	
 }
-.resumo .empresa{
+.resumo-empresa .empresa{
 	padding:2%;
-}
-.resumo p{
-	font-size: 20px;
-	color: rgb(0, 61, 94);	
-	text-align: justify;
+	 border-right: 1px solid rgb(93, 182, 211);
+  border-bottom: 1px solid rgb(93, 182, 211);
+  border-left: 1px solid #5DB6D3;
 }
 .noticias{
   border-right: 1px solid #E7E7E7;
@@ -114,7 +110,7 @@ ul.links-rodape.list-group a{
 	font-size : 17px;
 	text-align: justify;
 	font-family: arial;
-	color: black;
+	padding-top: 6px;
 }
 .sobre-nos ul{
 	font-size : 17px;
@@ -122,19 +118,29 @@ ul.links-rodape.list-group a{
 	font-family: arial;
 }
 .sobre-nos h3{
-	font-size : 23px;
 	text-align: justify;
-	font-family: arial;
+	border-bottom: 1px solid rgb(205, 208, 211);
+	padding-bottom: 5px;
 }
 .sobre-nos-texto{
-	border-left: 1px solid #E7E7E7;
-  	border-right:1px solid #E7E7E7;	
-  	background:#FAFAFA;
+	border-left: 1px solid #77BDD6;
+  	
+	border-right: 1px solid #77BDD6;	
+  	
+	border-bottom: 1px solid rgb(119, 189, 214);
+	background: aliceblue;
   	padding: 2% 2%;
- } 
+ 
+} 
  #imagem-sobre-nos{
  	width: 100%;
- }
+ 
+}
+
+.imagem-sobre-nos {
+    border-left: 1px solid rgb(119, 189, 214);
+    border-right: 1px solid rgb(119, 189, 214);
+}
  .imagem-servicos{
  	  border-bottom: 1px solid rgb(93, 182, 211);
  	  width: 100%;
@@ -202,3 +208,4 @@ ul.links-rodape.list-group a{
  
  
 
+s
