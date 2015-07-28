@@ -256,6 +256,8 @@ ul.links-rodape.list-group a{
 }
 
 .descricao-recepcao h4 {
+    margin-top: 28px;
+    margin-bottom: 20px;
 }
 
 .descricao-recepcao h3 {
@@ -268,8 +270,6 @@ ul.links-rodape.list-group a{
 
 .descricao-recepcao h4 {
     color: rgb(86, 42, 8);
-    margin-top: 20px;
-    margin-bottom: 9px;
 }
 .servico-recepcao{
 	border: 1px solid #B6AFAF;
@@ -285,9 +285,4 @@ ul.links-rodape.list-group a{
     margin-bottom: 18px;
     border: 1px solid rgb(229, 169, 62);
     color: rgb(86, 42, 8);
-}
-
-.texto-recepcao p {
-    margin-bottom: 14px;
-    padding-top: 11px;
 }
