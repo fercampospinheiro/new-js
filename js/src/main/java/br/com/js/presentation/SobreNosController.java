@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/sobreNos")
 public class SobreNosController {
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping("/sobreNos")
 	public String carregaTamplateSobreNos() {
 		return "/sobrenos/sobre-nos";
 		
