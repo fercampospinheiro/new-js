@@ -110,11 +110,37 @@ ul.links-rodape.list-group a{
 	background: none;
 }
 .imagen-seguranca{
-	border:1px solid #E7E7E7;
-	background: #E7E7E7;
+	background: #5DB6D3;
+}
+
+.descricao-seguranca {
+    margin-top: 1px;
+    margin-left: 30px;
+}
+
+.texto-seguranca {
+    border-radius: 5px; 
+    background: rgba(0, 0, 0, 0.1);
+    padding: 29px;
+    font-size: 17px;
+    margin-bottom: 18px;
+    border: 1px solid rgb(182, 175, 175);
+}
+
+.descricao-seguranca h4 {
+    margin-top: 28px;
+    margin-bottom: 20px;
+}
+
+.descricao-seguranca h3 {
+    background: black;
+    width: 410px;
+    color: white;
+    padding: 2px;
+    text-align: center;
 }
 .servico-seguranca{
-	border:1px solid #E7E7E7;
+	border: 1px solid #B6AFAF;
 	background: #E7E7E7;
 }
 
@@ -218,6 +244,50 @@ ul.links-rodape.list-group a{
   
  }
  
- 
+ .img-seguranca-1{
+    width: 100%;
+    border-bottom: 1px solid rgb(182, 175, 175);
+    border-right: 1px solid rgb(182, 175, 175);
+}
+ .img-recepcao-1{
+    width: 100%;
+    border-bottom: 1px solid rgb(182, 175, 175);
+    border-right: 1px solid rgb(182, 175, 175);
+}
 
-s
+.descricao-recepcao h4 {
+}
+
+.descricao-recepcao h3 {
+    background: rgb(229, 169, 62);
+    width: 410px;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+
+.descricao-recepcao h4 {
+    color: rgb(86, 42, 8);
+    margin-top: 20px;
+    margin-bottom: 9px;
+}
+.servico-recepcao{
+	border: 1px solid #B6AFAF;
+	background: #E7E7E7;
+}
+
+
+.texto-recepcao {
+    border-radius: 5px; 
+    background: rgba(231, 223, 208, 1);
+    padding: 29px;
+    font-size: 17px;
+    margin-bottom: 18px;
+    border: 1px solid rgb(229, 169, 62);
+    color: rgb(86, 42, 8);
+}
+
+.texto-recepcao p {
+    margin-bottom: 14px;
+    padding-top: 11px;
+}
