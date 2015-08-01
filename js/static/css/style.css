@@ -1,4 +1,3 @@
-
 .imagem-logo{
   width: 6%;
   height: 6	%;
@@ -9,10 +8,11 @@
   	height: 5%;
  } 
 .servicos-destaque{
-  border-bottom: 1px solid rgb(89, 180, 211);
+  border-bottom: 1px solid rgb(182, 182, 182);
   border-right: 1px solid rgba(135, 135, 135, 0.57);
   border-left: 1px solid rgb(185, 185, 185);
-  background: #FFFFFF;
+  background: #EEEEEE;
+  border-top: 1px solid rgb(182, 182, 182);
 }
 
 .servico-texto{
@@ -46,6 +46,7 @@
 .noticias{
   border-right: 1px solid #E7E7E7;
   border-left: 1px solid #E7E7E7;
+  background: white;
 }
 
 .noticias .titulo {
@@ -64,20 +65,25 @@
   font-size: 20px;
 }
 .outros-conteudo{
-  border-right: 1px solid rgb(93, 182, 211);
-  border-bottom: 1px solid rgb(93, 182, 211);
-  border-left: 1px solid #5DB6D3;
-  background: white;
+  border-right: 1px solid rgb(185, 185, 185);
+  border-bottom: 1px solid rgb(185, 185, 185);
+  border-left: 1px solid #B9B9B9;
+  border-top: 1px solid rgb(185, 185, 185);
+  background: #EEEEEE;
 }
 
 #myCarousel{
     margin-left: 28px;
     margin-right: 28px;
-    padding: 4% 4%;
+    padding: 2% 0%;
 }
 
 .carousel p{
     font-size: 25px;
+}
+.carousel .item{
+	border-radius:12px;
+	padding: 2px 1px;
 }
 .cabecalho-contato{
 	border:1px solid #E7E7E7;
@@ -92,8 +98,28 @@
 	border-left: 1px solid white;
 	border-right: 1px solid white;	
 }
-.rodape{
-	background: #027CAE	;
+.rodape-map.row{
+    margin: initial;
+    background: rgb(0, 72, 108);
+}
+
+footer.rodape .copyright a {
+    color: gold;
+}
+
+footer.rodape .copyright {
+    margin-left: 21px;
+    color: cornflowerblue;
+    font-size: 12px;
+}
+
+footer.rodape.row h5 {
+    margin-left: 20px;
+    margin-top: 20px;
+    color: aqua;
+}
+
+footer li {
 }
 ul.links-rodape.list-group {
 	padding: 2%;
@@ -145,7 +171,7 @@ ul.links-rodape.list-group a{
 	font-size : 17px;
 	text-align: justify;
 	font-family: arial;
-	padding-top: 6px;
+	padding-top: 21px;
 }
 .sobre-nos ul{
 	font-size : 17px;
@@ -154,17 +180,20 @@ ul.links-rodape.list-group a{
 }
 .sobre-nos h3{
 	text-align: justify;
-	border-bottom: 1px solid rgb(205, 208, 211);
-	padding-bottom: 5px;
+	border-bottom: 1px solid rgb(148, 149, 168);
+	padding-bottom: 3px;
+	color: rgb(0, 81, 118);
+	font-family: arial;
 }
 .sobre-nos-texto{
-	border-left: 1px solid #77BDD6;
+	border-left: 1px solid #D7D3D3;
   	
-	border-right: 1px solid #77BDD6;	
+	border-right: 1px solid #D7D3D3;	
   	
 	border-bottom: 1px solid rgb(119, 189, 214);
-	background: aliceblue;
-  	padding: 2% 2%;
+	background: rgba(231, 231, 231, 0.69);
+  	
+	padding: 2% 6%;
  
 } 
  #imagem-sobre-nos{
@@ -173,8 +202,8 @@ ul.links-rodape.list-group a{
 }
 
 .imagem-sobre-nos {
-    border-left: 1px solid rgb(119, 189, 214);
-    border-right: 1px solid rgb(119, 189, 214);
+    border-left: 1px solid rgb(231, 231, 231);
+    border-right: 1px solid rgb(130, 130, 130);
 }
  .imagem-servicos{
  	  border-bottom: 1px solid rgb(93, 182, 211);
@@ -185,8 +214,7 @@ ul.links-rodape.list-group a{
      position:relative;
  }
  .item{
-  background: white;
-  margin: 2%;
+  margin: 0%;
  }
  .item .texto{
  	height:80%;
@@ -221,7 +249,7 @@ ul.links-rodape.list-group a{
   	font-size: 21px;   margin-top: inherit;
 }
  .seguranca h3{	
-  	background:rgb(255, 87, 34);
+  	background: rgb(23, 0, 0);
  
   	font-size: 21px;
   	margin-top: inherit;
@@ -232,13 +260,13 @@ ul.links-rodape.list-group a{
   	font-size: 21px;   margin-top: inherit;
 }
  .zeladoria h3{
-  	background: rgb(156, 39, 176);
+  	background: #135986;
  
   	font-size: 21px;   margin-top: inherit;
 }
  
  .row .testemunho{
- 	  background: rgb(255, 255, 255);
+ 	  background: #EEEEEE;
  }
  .testemunho .titulo{
   
@@ -409,5 +437,12 @@ ul.links-rodape.list-group a{
     margin-bottom: 9px;
 }
 
-
+.rodape-map{
+	
+}
+.rodape-direitos{
+    margin: initial;
+	
+    background: black;
+}
 
