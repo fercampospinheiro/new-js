@@ -9,7 +9,7 @@ public class SobreNosController {
 	
 	@RequestMapping("/sobreNos")
 	public String carregaTamplateSobreNos() {
-		return "/sobrenos/sobre-nos";
+		return "sobrenos/sobre-nos";
 		
 	}
 	
