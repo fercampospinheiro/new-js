@@ -2,7 +2,6 @@ package br.com.js.domain.service;
 import br.com.js.domain.service.ConfigurationEmailBuilder;
 import br.com.js.domain.service.ConfigurationEmail;
 import br.com.js.domai.email.Email;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.Message;  
@@ -10,9 +9,10 @@ import javax.mail.MessagingException;
 import javax.mail.Multipart;
 import javax.mail.Session;  
 import javax.mail.Transport;  
-import javax.mail.internet.InternetAddress;  
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;   
+import javax.mail.internet.*;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.Authenticator;  
 import javax.mail.PasswordAuthentication;   
 import org.springframework.stereotype.Service;
@@ -37,13 +37,12 @@ public class EmailService {
     private MimeBodyPart getBodyPart() {
         try {
             MimeBodyPart body = new MimeBodyPart();
+            DataSource fds=new FileDataSource(email.getAttachment());
+            body.setDataHandler(new DataHandler(fds));
             body.setFileName(email.getAttachment().getAbsolutePath());
-            body.attachFile(email.getAttachment());
             body.setText("anexo");
             return body;
         } catch (MessagingException ex) {
-            Logger.getLogger(EmailService.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
             Logger.getLogger(EmailService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
@@ -63,7 +62,7 @@ public class EmailService {
   
         
         
-        Multipart mp = new javax.mail.internet.MimeMultipart();
+        Multipart mp = new MimeMultipart();
         MimeBodyPart bodyPart = getBodyPart();
         Message mensagem = new MimeMessage(sessao);  
         
@@ -78,7 +77,7 @@ public class EmailService {
             mensagem.setRecipient(Message.RecipientType.TO, new InternetAddress(email.getDestination()));  
             mensagem.setFrom(new InternetAddress(email.getOrigin())); 
             mensagem.setSubject(email.getSubject());   
-            mensagem.setContent(email.getContent(),"text/plain");  
+            mensagem.setContent(email.getContent(),"text/html");  
         } catch (Exception e) {  
             System.out.println("Erro ao preparar conteudo do e-mail!");  
             e.printStackTrace();  

@@ -28,7 +28,7 @@ public class TrabalheConoscoController {
         return "trabalheConosco/trabalhe-conosco";
     }
     @RequestMapping(value="/enviaCurriculo",method = RequestMethod.POST)
-    public String uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("name") String nameCollaborator,Model model){
+    public String uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("nameCollaborator") String nameCollaborator,Model model){
         
         Email email = factory.curriculumWorkWhitUs(nameCollaborator, file);
         service.sendMail(email);
