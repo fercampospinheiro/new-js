@@ -20,8 +20,6 @@ public class ContatoController {
 	
 	@RequestMapping(value="/salvar",method=RequestMethod.POST)
 	private String salvar(Contato contato){
-		EmailService emailService = new EmailService();
-		emailService.enviaEmail("fercampospinheiro@gmail.com", "fercampospinheiro@gmail.com", "Teste da js", contato.getMensagem());
 		
 		return "contato/contato";
 	}

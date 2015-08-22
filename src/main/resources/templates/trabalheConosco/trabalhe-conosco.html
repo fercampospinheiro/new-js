@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layoutDecorator/layout-principal">
+<head>
+<title>Js Serviços Terceirizados - Trabalhe Conosco</title>
+</head>
+<body>
+<section id="content" layout:fragment="content">
+  <!--CONTEUDO-->
+  <div class="area-conteudo">
+  <div class="resumo row">
+      <div id = "tire-suas-duvidas" class=" well">
+          <h1>#{ok}</h1>
+          
+          <form method="POST" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
+		Currículo : <input type="file" name="file"/>
+                <br/> 
+                Informe seu nome: <input type="text" name="nameCollaborator"/>
+                    <br/> <br/> 
+                <input type="submit" value="Enviar"/> Clique para enviar seu currículo!
+	</form>
+      </div>
+  </div>
+      
+  </div>
+</section>
+
+</body>
+</html>
