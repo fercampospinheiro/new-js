@@ -1,115 +1,43 @@
 package br.com.js.domain.service;
-import br.com.js.domain.service.ConfigurationEmailBuilder;
-import br.com.js.domain.service.ConfigurationEmail;
 import br.com.js.domai.email.Email;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.mail.Message;  
 import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Session;  
-import javax.mail.Transport;  
-import javax.mail.internet.InternetAddress;  
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;   
-import javax.mail.Authenticator;  
-import javax.mail.PasswordAuthentication;   
+import javax.mail.internet.MimeMessage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
  @Service 
 public class EmailService {  
       
-    private final String USUARIO = "fercampospinheiro@gmail.com";
-    private final String  SENHA = "sueli2011";
-    private Email email;
-    
+    @Autowired private JavaMailSender mailSender; 
+     
     public EmailService() {
     }
-    
-    private ConfigurationEmail obtemConfiguracoesEmail(){   
-         return new ConfigurationEmailBuilder()
-                    .getConfigurationDefault()
-                    .USER(USUARIO)
-                    .builder();
-    }
-    
-    private MimeBodyPart getBodyPart() {
+    public void sendMail(Email email){  
+        
+        MimeMessage mime  = mailSender.createMimeMessage();
+        
+        MimeMessageHelper message;
         try {
-            MimeBodyPart body = new MimeBodyPart();
-            body.setFileName(email.getAttachment().getAbsolutePath());
-            body.attachFile(email.getAttachment());
-            body.setText("anexo");
-            return body;
+            message = new MimeMessageHelper(mime,true,"UTF-8");   
+            message.setValidateAddresses(true);
+            message.setFrom("emailservicejs@gmail.com");
+            message.setTo("batista.jailson@yahoo.com.br ");
+            message.setText(email.getContent());
+            message.setSubject(email.getSubject());
+            message.addAttachment(email.getAttachmentName(), new ByteArrayResource(email.getAttachment().getBytes()));
+            mime = message.getMimeMessage();
         } catch (MessagingException ex) {
             Logger.getLogger(EmailService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EmailService.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
-    }
-    
-    
-    public void sendMail(Email email) {  
-          
-        this.email = email;
-        
-    	ConfigurationEmail configuracoes = obtemConfiguracoesEmail();
-        
-        Autenticadora autentica = new Autenticadora (USUARIO,SENHA);  
-      
-        Session sessao = Session.getDefaultInstance(configuracoes, autentica);  
-        sessao.setDebug(true);  
-  
-        
-        
-        Multipart mp = new javax.mail.internet.MimeMultipart();
-        MimeBodyPart bodyPart = getBodyPart();
-        Message mensagem = new MimeMessage(sessao);  
-        
-        try {
-             mp.addBodyPart(bodyPart);
-             mensagem.setContent(mp);       
-         } catch (MessagingException e1) {
-             e1.printStackTrace();
-         }
-        
-        try {  
-            mensagem.setRecipient(Message.RecipientType.TO, new InternetAddress(email.getDestination()));  
-            mensagem.setFrom(new InternetAddress(email.getOrigin())); 
-            mensagem.setSubject(email.getSubject());   
-            mensagem.setContent(email.getContent(),"text/plain");  
-        } catch (Exception e) {  
-            System.out.println("Erro ao preparar conteudo do e-mail!");  
-            e.printStackTrace();  
-        }  
-           
-        Transport transportadorEmail;  
-        try {  
-            transportadorEmail = sessao.getTransport("smtp");  
-            transportadorEmail.connect(obtemConfiguracoesEmail().getServerSMTP(), USUARIO, SENHA);  
-            mensagem.saveChanges();
-            transportadorEmail.sendMessage(mensagem, mensagem.getAllRecipients());  
-            transportadorEmail.close();  
-        } catch (Exception e) {  
-            System.out.println("Erro ao enviar e-mail!");  
-            e.printStackTrace();  
-        }  
-  
-    }  
-}  
-
-
-class Autenticadora extends Authenticator {  
-    public String usuario = null;  
-    public String senha = null;  
-  
-    public Autenticadora(String user, String pwd) {  
-        usuario = user;  
-        senha = pwd;  
-    }  
-  
-    protected PasswordAuthentication getPasswordAuthentication() {  
-        return new PasswordAuthentication (usuario,senha);  
-    }  
+        this.mailSender.send(mime);
+    }    
+ 
 }   

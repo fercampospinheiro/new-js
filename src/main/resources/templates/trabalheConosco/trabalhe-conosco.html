@@ -9,12 +9,12 @@
   <div class="area-conteudo">
   <div class="resumo row">
       <div id = "tire-suas-duvidas" class=" well">
-          <h1>#{ok}</h1>
+          <h1 th:text="#{ok}">ok</h1>
           
-          <form method="POST" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
+          <form method="post" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
 		Currículo : <input type="file" name="file"/>
                 <br/> 
-                Informe seu nome: <input type="text" name="nameCollaborator"/>
+                Informe seu nome: <input type="text" name="name"/>
                     <br/> <br/> 
                 <input type="submit" value="Enviar"/> Clique para enviar seu currículo!
 	</form>

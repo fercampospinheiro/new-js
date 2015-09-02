@@ -1,9 +1,5 @@
 package br.com.js.domai.email;
-
-import java.io.File;
-import java.io.IOException;
 import org.springframework.web.multipart.MultipartFile;
-
 /**
  *
  * @author fernando
@@ -13,7 +9,16 @@ public class Email {
     private String content;
     private String destination;
     private String origin;
-    private File attachment;
+    private MultipartFile attachment;
+    private String attachmentName;
+
+    public String getAttachmentName() {
+        return attachmentName;
+    }   
+
+    public void setAttachmentName(String attachmentName) {
+        this.attachmentName = attachmentName;
+    }
 
     public String getSubject() {
         return subject;
@@ -47,11 +52,11 @@ public class Email {
         this.origin = origin;
     }
 
-    public File getAttachment() {
+    public MultipartFile getAttachment() {
         return attachment;
     }
 
-    public void attachFile(File file) {
+    public void attachFile(MultipartFile file) {
         this.attachment = file;
     }
     

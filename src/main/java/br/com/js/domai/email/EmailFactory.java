@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package br.com.js.domai.email;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,34 +14,23 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class EmailFactory {
     
-    public Email curriculumWorkWhitUs(String Subject,MultipartFile attachment ){
+    public Email curriculumWorkWhitUs(String subject,MultipartFile attachment ){
         Email email = new  Email();
         email.setContent(getContentWorkWhitUs());
-        email.setSubject(Subject);
-        
-        try {
-            File file = multipartToFile(attachment);
-            email.attachFile(file);
-        } catch (IllegalStateException ex) {
-            Logger.getLogger(EmailFactory.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(EmailFactory.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        email.setSubject(getSubject(subject));
+        email.attachFile(attachment);
         email.setOrigin("fercampospinheiro@gmail.com");
         email.setDestination("fercampospinheiro@gmail.com");
-      
+        email.setAttachmentName(attachment.getOriginalFilename());
+        
         return email;
-    
     }
 
     private String getContentWorkWhitUs(){
-        return "você recebeu um novo currículo";
+        return "Você recebeu um novo currículo. Clique no anexo abaixo.";
     }
-
-     private File multipartToFile(MultipartFile multipart) throws IllegalStateException, IOException {
-        File convFile = new File( multipart.getOriginalFilename());
-        multipart.transferTo(convFile);
-        return convFile;
+    private String getSubject(String subject){
+        return "currículo do(a) "+ subject;
     }
+    
 }
