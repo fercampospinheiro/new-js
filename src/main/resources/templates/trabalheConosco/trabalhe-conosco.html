@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layoutDecorator/layout-principal">
-<head>
-<title>Js Serviços Terceirizados - Trabalhe Conosco</title>
-</head>
-<body>
-<section id="content" layout:fragment="content">
-  <!--CONTEUDO-->
-  <div class="area-conteudo">
-  <div class="resumo row">
-      <div id = "tire-suas-duvidas" class=" well">
-          <h1 th:text="#{ok}">ok</h1>
-          
-          <form method="post" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
-		Currículo : <input type="file" name="file"/>
-                <br/> 
-                Informe seu nome: <input type="text" name="name"/>
-                    <br/> <br/> 
-                <input type="submit" value="Enviar"/> Clique para enviar seu currículo!
-	</form>
-      </div>
-  </div>
-      
-  </div>
-</section>
+    <head>
+        <title>Js Serviços Terceirizados - Trabalhe Conosco</title>
+    </head>
+    <body>
+        <section id="content" layout:fragment="content">
+            <!--CONTEUDO-->
+             <!-- Formulario Contato -->
+	    <div class="row">
+	    	<div class="cabecalho-contato col-md-12">
+	    		<div class="row"> 
+                            <img  th:src="@{/image/ID-10039002.jpg}"/><img  th:src="@{/image/ID-10066547.jpg}"/>
+			</div>
+	    	</div>
+	    </div>
+	    <div class="row conteudo-contato">
+	        <div class="texto-trabalho-conosco col-md-12">
+                    <h3>Faça parte da nossa equipe.</h3>
+                    <p>Se você é uma pessoa dedicada, cheia de vontade de trabalhar, possui experiência na área de serviços, 
+                        nos encaminhe seu currículo abaixo. Será um prazer ter você como parceiro.
+                        <br/>
+                        Atenciosamente,
+                        </br>
+                        Js Terceirizações.
+                        </b>
+                    </p>      
+	        </div>
+                <div class="form-trabalhe-conosco col-md-12">  
+                        <form method="post" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
+                            Currículo : <input type="file" name="file"/>
+                            <br/> 
+                            Informe seu nome: <input type="text" name="name"/>
+                            <br/> <br/> 
+                            <input type="submit" value="Enviar"/> Clique para enviar seu currículo!
+                        </form>
+                </div>
+            </div>
+        </section>
 
-</body>
+    </body>
 </html>

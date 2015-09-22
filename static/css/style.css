@@ -88,6 +88,10 @@
 .cabecalho-contato{
 	border:1px solid #E7E7E7;
 }
+
+.cabecalho-contato img {
+    width: 25%;
+}
 .conteudo-contato{
 	border:1px solid #E7E7E7;
 	background: #E7E7E7;
@@ -229,6 +233,10 @@ ul.links-rodape.list-group a{
 	  width: 40%;
 	  height: 40%;
  }
+
+.destaque {
+    width: 25%;
+}
  .item h3{
  	margin-top: auto;
  	color:white;	
@@ -446,3 +454,12 @@ ul.links-rodape.list-group a{
     background: black;
 }
 
+.form-trabalhe-conosco form {
+    margin-left: 26px;
+    margin-bottom: 40px;
+    margin-top: 65px;
+}
+
+.texto-trabalho-conosco{
+    
+}
