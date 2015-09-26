@@ -31,7 +31,7 @@ public class EmailService {
             message = new MimeMessageHelper(mime,true,"UTF-8");   
             message.setValidateAddresses(true);
             message.setFrom("emailservicejs@gmail.com");
-            message.setTo("fercampospinheiro@gmail.com");
+            message.setTo("batista.jailson@yahoo.com.br");
             message.setText(email.getContent());
             message.setSubject(email.getSubject());
             message.addAttachment(email.getAttachmentName(), new ByteArrayResource(email.getAttachment().getBytes()));
