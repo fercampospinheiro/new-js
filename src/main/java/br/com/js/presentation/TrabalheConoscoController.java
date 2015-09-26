@@ -31,7 +31,7 @@ public class TrabalheConoscoController {
     public String uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("name") String name,Model model){
         Email email = factory.curriculumWorkWhitUs(name, file);
         service.sendMail(email);
-        model.addAttribute("ok", "email enviado com sucesso");
+        model.addAttribute("ok", " Obrigado pelo envio do seu currículo.");
         
         return "/trabalheConosco/trabalhe-conosco";
     }

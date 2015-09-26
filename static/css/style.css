@@ -1,6 +1,6 @@
 .imagem-logo{
   width: 6%;
-  height: 6	%;
+  height: 6%;
   }
   
  .letra-logo{
@@ -462,4 +462,25 @@ ul.links-rodape.list-group a{
 
 .texto-trabalho-conosco{
     
+}
+
+.texto-trabalho-conosco .texto p {
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: -2%;
+}
+
+.texto-trabalho-conosco .titulo {
+    background: #2F2928;
+    color: azure;
+    padding-left: 4%;
+    margin-top: -1%;
+    width: 106%;   margin-left: -3%;
+}
+
+.texto-trabalho-conosco .titulo {
+}
+.cabecalho-trabalhe-conosco img{
+	width:50%;
 }

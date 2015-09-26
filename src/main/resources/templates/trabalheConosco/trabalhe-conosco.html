@@ -8,7 +8,7 @@
             <!--CONTEUDO-->
              <!-- Formulario Contato -->
 	    <div class="row">
-	    	<div class="cabecalho-contato col-md-12">
+	    	<div class="cabecalho-trabalhe-conosco col-md-12">
 	    		<div class="row"> 
                             <img  th:src="@{/image/ID-10039002.jpg}"/><img  th:src="@{/image/ID-10066547.jpg}"/>
 			</div>
@@ -16,24 +16,37 @@
 	    </div>
 	    <div class="row conteudo-contato">
 	        <div class="texto-trabalho-conosco col-md-12">
-                    <h3>Faça parte da nossa equipe.</h3>
-                    <p>Se você é uma pessoa dedicada, cheia de vontade de trabalhar, possui experiência na área de serviços, 
-                        nos encaminhe seu currículo abaixo. Será um prazer ter você como parceiro.
-                        <br/>
+                    <div class="titulo row">
+                        <h3>Faça parte da nossa equipe.</h3>    
+                    </div>
+                    <div class="texto row">
+                        <div th:if="*{not #strings.isEmpty(ok)}">
+                          <p class="alert alert-success" role="alert" th:text="*{ok}"></p>  
+                        </div>
+                        
+                        <p>Se você é uma pessoa dedicada, cheia de vontade de trabalhar, possui experiência na área de serviços, 
+                            nos encaminhe seu currículo abaixo. Será um prazer ter você como parceiro.
+                        </p>    
+                        <p>    
                         Atenciosamente,
-                        </br>
+                        </p>
+                        <p>
                         Js Terceirizações.
-                        </b>
-                    </p>      
+                        </p>
+                    </div>
 	        </div>
-                <div class="form-trabalhe-conosco col-md-12">  
-                        <form method="post" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
-                            Currículo : <input type="file" name="file"/>
-                            <br/> 
-                            Informe seu nome: <input type="text" name="name"/>
-                            <br/> <br/> 
-                            <input type="submit" value="Enviar"/> Clique para enviar seu currículo!
-                        </form>
+                    <div class="form-trabalhe-conosco col-md-12">  
+                    <form role="form" method="post" enctype="multipart/form-data" action="/trabalheConosco/enviaCurriculo">
+                        <div class="form-group">
+                          <label for="file">Currículo:</label>
+                          <input type="file" class="form-control" id="file" name="file"/>
+                        </div>
+                        <div class="form-group">
+                          <label for="nome">Informe seu nome:</label>
+                          <input type="text" class="form-control" id="nome" name="name"/>
+                        </div>
+                        <button type="submit" class="btn btn-default">enviar</button>
+                    </form>
                 </div>
             </div>
         </section>
